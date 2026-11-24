@@ -1,0 +1,17 @@
+{
+  "@@locale": "pt",
+  "appTitle": "MISSÃO PRÓXIMA FAIXA",
+  "login": "Entrar",
+  "email": "E-mail",
+  "password": "Senha",
+  "logout": "Sair",
+  "configurationRequired": "Configuração do Supabase necessária",
+  "configurationHint": "Informe SUPABASE_URL e SUPABASE_ANON_KEY.",
+  "welcome": "Olá!",
+  "adminDashboard": "Painel administrativo",
+  "parentDashboard": "Painel do responsável",
+  "studentDashboard": "Painel do aluno",
+  "stageOne": "Etapa 1: arquitetura e autenticação",
+  "invalidCredentials": "E-mail ou senha inválidos.",
+  "unexpectedError": "Não foi possível concluir a operação."
+}

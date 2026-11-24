@@ -1,0 +1,17 @@
+{
+  "@@locale": "es",
+  "appTitle": "MISIÓN PRÓXIMO CINTURÓN",
+  "login": "Iniciar sesión",
+  "email": "Correo electrónico",
+  "password": "Contraseña",
+  "logout": "Cerrar sesión",
+  "configurationRequired": "Se requiere configuración de Supabase",
+  "configurationHint": "Informa SUPABASE_URL y SUPABASE_ANON_KEY.",
+  "welcome": "¡Hola!",
+  "adminDashboard": "Panel administrativo",
+  "parentDashboard": "Panel del responsable",
+  "studentDashboard": "Panel del alumno",
+  "stageOne": "Etapa 1: arquitectura y autenticación",
+  "invalidCredentials": "Correo electrónico o contraseña inválidos.",
+  "unexpectedError": "No fue posible completar la operación."
+}
