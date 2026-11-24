@@ -152,6 +152,7 @@ class PassportRepository {
               endDate: cycle['end_date'] == null
                   ? null
                   : DateTime.parse(cycle['end_date'] as String),
+              nextBeltId: nextBeltId,
               nextBeltNamePt: nextBelt?.namePt,
               nextBeltNameEs: nextBelt?.nameEs,
               items: items,

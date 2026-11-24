@@ -301,6 +301,133 @@ class AppLocalizationsPt extends AppLocalizations {
   String get activityUpdateFailed => 'Não foi possível atualizar a atividade';
 
   @override
+  String get attendance => 'Presença';
+
+  @override
+  String get attendanceHistory => 'Histórico de presença';
+
+  @override
+  String get attendanceRate => 'Frequência';
+
+  @override
+  String get attendanceRateNotAvailable => 'Não disponível';
+
+  @override
+  String get attendanceRecordedClasses => 'Aulas registradas';
+
+  @override
+  String get noAttendanceRecords => 'Ainda não há registros de presença.';
+
+  @override
+  String get present => 'Presente';
+
+  @override
+  String get absent => 'Ausente';
+
+  @override
+  String get excused => 'Justificado';
+
+  @override
+  String get chooseAttendance => 'Selecionar presença';
+
+  @override
+  String get attendanceDate => 'Data da aula';
+
+  @override
+  String get saveAttendance => 'Salvar presença';
+
+  @override
+  String get attendanceSaved => 'Presença salva com sucesso.';
+
+  @override
+  String get attendanceSaveFailed => 'Não foi possível salvar a presença';
+
+  @override
+  String get attendanceIncomplete => 'Selecione a presença de cada aluno.';
+
+  @override
+  String get noStudentsInCycle => 'Não há alunos inscritos neste ciclo.';
+
+  @override
+  String get technicalProgress => 'Evolução técnica';
+
+  @override
+  String get technicalRequirements => 'Requisitos técnicos';
+
+  @override
+  String get noTechnicalRequirements =>
+      'Não há requisitos técnicos configurados para esta faixa.';
+
+  @override
+  String get technicalRequirementNotReady =>
+      'Defina a próxima faixa no ciclo para acompanhar os requisitos.';
+
+  @override
+  String get technicalStatusDeveloping => 'Em desenvolvimento';
+
+  @override
+  String get technicalStatusNeedsWork => 'Precisa praticar';
+
+  @override
+  String get technicalStatusAchieved => 'Conquistado';
+
+  @override
+  String get notEvaluated => 'Ainda não avaliado';
+
+  @override
+  String get evaluate => 'Avaliar';
+
+  @override
+  String get technicalEvaluation => 'Avaliação técnica';
+
+  @override
+  String get evaluationObservation => 'Observação (opcional)';
+
+  @override
+  String get saveEvaluation => 'Salvar avaliação';
+
+  @override
+  String get evaluationSaved => 'Avaliação salva com sucesso.';
+
+  @override
+  String get evaluationSaveFailed => 'Não foi possível salvar a avaliação';
+
+  @override
+  String get createTechnicalRequirement => 'Adicionar requisito';
+
+  @override
+  String get technicalRequirementNamePt => 'Requisito em português';
+
+  @override
+  String get technicalRequirementNameEs => 'Requisito em espanhol';
+
+  @override
+  String get technicalRequirementNameRequired =>
+      'Informe o requisito em português e espanhol.';
+
+  @override
+  String get technicalRequirementDescriptionPt =>
+      'Descrição em português (opcional)';
+
+  @override
+  String get technicalRequirementDescriptionEs =>
+      'Descrição em espanhol (opcional)';
+
+  @override
+  String get selectBelt => 'Selecione uma faixa';
+
+  @override
+  String get noBeltsAvailable =>
+      'Cadastre as faixas antes de adicionar requisitos técnicos.';
+
+  @override
+  String get technicalRequirementCreated => 'Requisito técnico adicionado.';
+
+  @override
+  String get technicalRequirementCreateFailed =>
+      'Não foi possível adicionar o requisito técnico';
+
+  @override
   String get studentPassportUnavailable =>
       'Não foi possível localizar o passaporte deste aluno.';
 

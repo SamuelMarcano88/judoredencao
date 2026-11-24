@@ -656,6 +656,246 @@ abstract class AppLocalizations {
   /// **'Não foi possível atualizar a atividade'**
   String get activityUpdateFailed;
 
+  /// No description provided for @attendance.
+  ///
+  /// In pt, this message translates to:
+  /// **'Presença'**
+  String get attendance;
+
+  /// No description provided for @attendanceHistory.
+  ///
+  /// In pt, this message translates to:
+  /// **'Histórico de presença'**
+  String get attendanceHistory;
+
+  /// No description provided for @attendanceRate.
+  ///
+  /// In pt, this message translates to:
+  /// **'Frequência'**
+  String get attendanceRate;
+
+  /// No description provided for @attendanceRateNotAvailable.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não disponível'**
+  String get attendanceRateNotAvailable;
+
+  /// No description provided for @attendanceRecordedClasses.
+  ///
+  /// In pt, this message translates to:
+  /// **'Aulas registradas'**
+  String get attendanceRecordedClasses;
+
+  /// No description provided for @noAttendanceRecords.
+  ///
+  /// In pt, this message translates to:
+  /// **'Ainda não há registros de presença.'**
+  String get noAttendanceRecords;
+
+  /// No description provided for @present.
+  ///
+  /// In pt, this message translates to:
+  /// **'Presente'**
+  String get present;
+
+  /// No description provided for @absent.
+  ///
+  /// In pt, this message translates to:
+  /// **'Ausente'**
+  String get absent;
+
+  /// No description provided for @excused.
+  ///
+  /// In pt, this message translates to:
+  /// **'Justificado'**
+  String get excused;
+
+  /// No description provided for @chooseAttendance.
+  ///
+  /// In pt, this message translates to:
+  /// **'Selecionar presença'**
+  String get chooseAttendance;
+
+  /// No description provided for @attendanceDate.
+  ///
+  /// In pt, this message translates to:
+  /// **'Data da aula'**
+  String get attendanceDate;
+
+  /// No description provided for @saveAttendance.
+  ///
+  /// In pt, this message translates to:
+  /// **'Salvar presença'**
+  String get saveAttendance;
+
+  /// No description provided for @attendanceSaved.
+  ///
+  /// In pt, this message translates to:
+  /// **'Presença salva com sucesso.'**
+  String get attendanceSaved;
+
+  /// No description provided for @attendanceSaveFailed.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não foi possível salvar a presença'**
+  String get attendanceSaveFailed;
+
+  /// No description provided for @attendanceIncomplete.
+  ///
+  /// In pt, this message translates to:
+  /// **'Selecione a presença de cada aluno.'**
+  String get attendanceIncomplete;
+
+  /// No description provided for @noStudentsInCycle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não há alunos inscritos neste ciclo.'**
+  String get noStudentsInCycle;
+
+  /// No description provided for @technicalProgress.
+  ///
+  /// In pt, this message translates to:
+  /// **'Evolução técnica'**
+  String get technicalProgress;
+
+  /// No description provided for @technicalRequirements.
+  ///
+  /// In pt, this message translates to:
+  /// **'Requisitos técnicos'**
+  String get technicalRequirements;
+
+  /// No description provided for @noTechnicalRequirements.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não há requisitos técnicos configurados para esta faixa.'**
+  String get noTechnicalRequirements;
+
+  /// No description provided for @technicalRequirementNotReady.
+  ///
+  /// In pt, this message translates to:
+  /// **'Defina a próxima faixa no ciclo para acompanhar os requisitos.'**
+  String get technicalRequirementNotReady;
+
+  /// No description provided for @technicalStatusDeveloping.
+  ///
+  /// In pt, this message translates to:
+  /// **'Em desenvolvimento'**
+  String get technicalStatusDeveloping;
+
+  /// No description provided for @technicalStatusNeedsWork.
+  ///
+  /// In pt, this message translates to:
+  /// **'Precisa praticar'**
+  String get technicalStatusNeedsWork;
+
+  /// No description provided for @technicalStatusAchieved.
+  ///
+  /// In pt, this message translates to:
+  /// **'Conquistado'**
+  String get technicalStatusAchieved;
+
+  /// No description provided for @notEvaluated.
+  ///
+  /// In pt, this message translates to:
+  /// **'Ainda não avaliado'**
+  String get notEvaluated;
+
+  /// No description provided for @evaluate.
+  ///
+  /// In pt, this message translates to:
+  /// **'Avaliar'**
+  String get evaluate;
+
+  /// No description provided for @technicalEvaluation.
+  ///
+  /// In pt, this message translates to:
+  /// **'Avaliação técnica'**
+  String get technicalEvaluation;
+
+  /// No description provided for @evaluationObservation.
+  ///
+  /// In pt, this message translates to:
+  /// **'Observação (opcional)'**
+  String get evaluationObservation;
+
+  /// No description provided for @saveEvaluation.
+  ///
+  /// In pt, this message translates to:
+  /// **'Salvar avaliação'**
+  String get saveEvaluation;
+
+  /// No description provided for @evaluationSaved.
+  ///
+  /// In pt, this message translates to:
+  /// **'Avaliação salva com sucesso.'**
+  String get evaluationSaved;
+
+  /// No description provided for @evaluationSaveFailed.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não foi possível salvar a avaliação'**
+  String get evaluationSaveFailed;
+
+  /// No description provided for @createTechnicalRequirement.
+  ///
+  /// In pt, this message translates to:
+  /// **'Adicionar requisito'**
+  String get createTechnicalRequirement;
+
+  /// No description provided for @technicalRequirementNamePt.
+  ///
+  /// In pt, this message translates to:
+  /// **'Requisito em português'**
+  String get technicalRequirementNamePt;
+
+  /// No description provided for @technicalRequirementNameEs.
+  ///
+  /// In pt, this message translates to:
+  /// **'Requisito em espanhol'**
+  String get technicalRequirementNameEs;
+
+  /// No description provided for @technicalRequirementNameRequired.
+  ///
+  /// In pt, this message translates to:
+  /// **'Informe o requisito em português e espanhol.'**
+  String get technicalRequirementNameRequired;
+
+  /// No description provided for @technicalRequirementDescriptionPt.
+  ///
+  /// In pt, this message translates to:
+  /// **'Descrição em português (opcional)'**
+  String get technicalRequirementDescriptionPt;
+
+  /// No description provided for @technicalRequirementDescriptionEs.
+  ///
+  /// In pt, this message translates to:
+  /// **'Descrição em espanhol (opcional)'**
+  String get technicalRequirementDescriptionEs;
+
+  /// No description provided for @selectBelt.
+  ///
+  /// In pt, this message translates to:
+  /// **'Selecione uma faixa'**
+  String get selectBelt;
+
+  /// No description provided for @noBeltsAvailable.
+  ///
+  /// In pt, this message translates to:
+  /// **'Cadastre as faixas antes de adicionar requisitos técnicos.'**
+  String get noBeltsAvailable;
+
+  /// No description provided for @technicalRequirementCreated.
+  ///
+  /// In pt, this message translates to:
+  /// **'Requisito técnico adicionado.'**
+  String get technicalRequirementCreated;
+
+  /// No description provided for @technicalRequirementCreateFailed.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não foi possível adicionar o requisito técnico'**
+  String get technicalRequirementCreateFailed;
+
   /// No description provided for @studentPassportUnavailable.
   ///
   /// In pt, this message translates to:

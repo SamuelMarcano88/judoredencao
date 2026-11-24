@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:missao_proxima_faixa/core/l10n/app_localizations.dart';
+import 'package:missao_proxima_faixa/features/progress/presentation/student_progress_sections.dart';
 
 import '../domain/student_passport.dart';
 import 'providers.dart';
@@ -11,10 +12,12 @@ class StudentPassportView extends ConsumerWidget {
     super.key,
     this.studentId,
     this.allowCompletion = false,
+    this.allowTechnicalEvaluation = false,
   });
 
   final String? studentId;
   final bool allowCompletion;
+  final bool allowTechnicalEvaluation;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -41,6 +44,7 @@ class StudentPassportView extends ConsumerWidget {
               passport: value,
               studentId: studentId,
               allowCompletion: allowCompletion,
+              allowTechnicalEvaluation: allowTechnicalEvaluation,
             ),
     );
   }
@@ -51,10 +55,12 @@ class StudentPassportScreen extends StatelessWidget {
     super.key,
     required this.studentId,
     this.allowCompletion = false,
+    this.allowTechnicalEvaluation = false,
   });
 
   final String studentId;
   final bool allowCompletion;
+  final bool allowTechnicalEvaluation;
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +70,7 @@ class StudentPassportScreen extends StatelessWidget {
       body: StudentPassportView(
         studentId: studentId,
         allowCompletion: allowCompletion,
+        allowTechnicalEvaluation: allowTechnicalEvaluation,
       ),
     );
   }
@@ -74,11 +81,13 @@ class _PassportContent extends ConsumerWidget {
     required this.passport,
     required this.studentId,
     required this.allowCompletion,
+    required this.allowTechnicalEvaluation,
   });
 
   final StudentPassport passport;
   final String? studentId;
   final bool allowCompletion;
+  final bool allowTechnicalEvaluation;
 
   Future<void> _toggleActivity(
     BuildContext context,
@@ -255,6 +264,15 @@ class _PassportContent extends ConsumerWidget {
                   ),
                 ),
               ],
+              const SizedBox(height: 16),
+              AttendanceHistorySection(studentId: passport.studentId),
+              const SizedBox(height: 16),
+              TechnicalProgressSection(
+                studentId: passport.studentId,
+                cycleId: cycle?.id,
+                beltId: cycle?.nextBeltId,
+                allowEvaluation: allowTechnicalEvaluation,
+              ),
             ],
           ),
         ),

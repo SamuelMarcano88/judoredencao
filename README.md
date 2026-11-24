@@ -97,6 +97,26 @@ supabase db push
 Faixas são opcionais no cadastro do ciclo. Elas só aparecem como opções depois
 que houver registros na tabela `belts`.
 
+## Etapa 4: presença e evolução técnica
+
+O administrador registra presença por ciclo e data; registros existentes podem
+ser corrigidos. Responsáveis e alunos consultam o percentual de frequência e os
+registros recentes, mas não podem alterá-los. Aulas justificadas não entram no
+cálculo do percentual.
+
+O administrador também cadastra requisitos técnicos bilíngues por faixa e avalia
+cada requisito no passaporte do aluno. Responsáveis e alunos podem consultar
+essas avaliações, mas somente o administrador pode registrá-las. Para habilitar
+a evolução técnica, cadastre faixas na tabela `belts`, selecione a próxima faixa
+ao criar o ciclo e adicione os requisitos correspondentes no painel
+administrativo.
+
+Para aplicar a migração da Etapa 4 no Supabase:
+
+```powershell
+supabase db push
+```
+
 ## Build de produção
 
 ```powershell

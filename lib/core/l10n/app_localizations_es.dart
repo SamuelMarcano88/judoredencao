@@ -303,6 +303,133 @@ class AppLocalizationsEs extends AppLocalizations {
   String get activityUpdateFailed => 'No se pudo actualizar la actividad';
 
   @override
+  String get attendance => 'Asistencia';
+
+  @override
+  String get attendanceHistory => 'Historial de asistencia';
+
+  @override
+  String get attendanceRate => 'Asistencia';
+
+  @override
+  String get attendanceRateNotAvailable => 'No disponible';
+
+  @override
+  String get attendanceRecordedClasses => 'Clases registradas';
+
+  @override
+  String get noAttendanceRecords => 'Todavía no hay registros de asistencia.';
+
+  @override
+  String get present => 'Presente';
+
+  @override
+  String get absent => 'Ausente';
+
+  @override
+  String get excused => 'Justificado';
+
+  @override
+  String get chooseAttendance => 'Seleccionar asistencia';
+
+  @override
+  String get attendanceDate => 'Fecha de la clase';
+
+  @override
+  String get saveAttendance => 'Guardar asistencia';
+
+  @override
+  String get attendanceSaved => 'Asistencia guardada correctamente.';
+
+  @override
+  String get attendanceSaveFailed => 'No se pudo guardar la asistencia';
+
+  @override
+  String get attendanceIncomplete => 'Selecciona la asistencia de cada alumno.';
+
+  @override
+  String get noStudentsInCycle => 'No hay alumnos inscritos en este ciclo.';
+
+  @override
+  String get technicalProgress => 'Evolución técnica';
+
+  @override
+  String get technicalRequirements => 'Requisitos técnicos';
+
+  @override
+  String get noTechnicalRequirements =>
+      'No hay requisitos técnicos configurados para este cinturón.';
+
+  @override
+  String get technicalRequirementNotReady =>
+      'Define el próximo cinturón del ciclo para seguir sus requisitos.';
+
+  @override
+  String get technicalStatusDeveloping => 'En desarrollo';
+
+  @override
+  String get technicalStatusNeedsWork => 'Necesita practicar';
+
+  @override
+  String get technicalStatusAchieved => 'Logrado';
+
+  @override
+  String get notEvaluated => 'Aún sin evaluar';
+
+  @override
+  String get evaluate => 'Evaluar';
+
+  @override
+  String get technicalEvaluation => 'Evaluación técnica';
+
+  @override
+  String get evaluationObservation => 'Observación (opcional)';
+
+  @override
+  String get saveEvaluation => 'Guardar evaluación';
+
+  @override
+  String get evaluationSaved => 'Evaluación guardada correctamente.';
+
+  @override
+  String get evaluationSaveFailed => 'No se pudo guardar la evaluación';
+
+  @override
+  String get createTechnicalRequirement => 'Agregar requisito';
+
+  @override
+  String get technicalRequirementNamePt => 'Requisito en portugués';
+
+  @override
+  String get technicalRequirementNameEs => 'Requisito en español';
+
+  @override
+  String get technicalRequirementNameRequired =>
+      'Ingresa el requisito en portugués y español.';
+
+  @override
+  String get technicalRequirementDescriptionPt =>
+      'Descripción en portugués (opcional)';
+
+  @override
+  String get technicalRequirementDescriptionEs =>
+      'Descripción en español (opcional)';
+
+  @override
+  String get selectBelt => 'Selecciona un cinturón';
+
+  @override
+  String get noBeltsAvailable =>
+      'Registra los cinturones antes de agregar requisitos técnicos.';
+
+  @override
+  String get technicalRequirementCreated => 'Requisito técnico agregado.';
+
+  @override
+  String get technicalRequirementCreateFailed =>
+      'No se pudo agregar el requisito técnico';
+
+  @override
   String get studentPassportUnavailable =>
       'No se pudo encontrar el pasaporte de este alumno.';
 

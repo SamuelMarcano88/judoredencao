@@ -22,6 +22,7 @@ class PassportCycle {
     required this.name,
     required this.startDate,
     required this.endDate,
+    this.nextBeltId,
     required this.nextBeltNamePt,
     required this.nextBeltNameEs,
     required this.items,
@@ -31,6 +32,7 @@ class PassportCycle {
   final String name;
   final DateTime startDate;
   final DateTime? endDate;
+  final String? nextBeltId;
   final String? nextBeltNamePt;
   final String? nextBeltNameEs;
   final List<PassportChecklistItem> items;

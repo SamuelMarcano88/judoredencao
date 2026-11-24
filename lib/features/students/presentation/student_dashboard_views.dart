@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import 'package:missao_proxima_faixa/core/l10n/app_localizations.dart';
 import 'package:missao_proxima_faixa/features/passport/presentation/cycle_management_screen.dart';
+import 'package:missao_proxima_faixa/features/progress/presentation/attendance_management_view.dart';
+import 'package:missao_proxima_faixa/features/progress/presentation/technical_requirements_view.dart';
 import 'package:missao_proxima_faixa/features/students/domain/parent_record.dart';
 import 'package:missao_proxima_faixa/features/students/domain/student_record.dart';
 import 'providers.dart';
@@ -15,10 +17,11 @@ class AdminDashboardView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return DefaultTabController(
-      length: 3,
+      length: 5,
       child: Column(
         children: [
           TabBar(
+            isScrollable: true,
             tabs: [
               Tab(text: l10n.students, icon: const Icon(Icons.groups_outlined)),
               Tab(
@@ -26,6 +29,14 @@ class AdminDashboardView extends StatelessWidget {
                 icon: const Icon(Icons.family_restroom_outlined),
               ),
               Tab(text: l10n.cycles, icon: const Icon(Icons.autorenew)),
+              Tab(
+                text: l10n.attendance,
+                icon: const Icon(Icons.fact_check_outlined),
+              ),
+              Tab(
+                text: l10n.technicalRequirements,
+                icon: const Icon(Icons.sports_martial_arts),
+              ),
             ],
           ),
           const Expanded(
@@ -34,6 +45,8 @@ class AdminDashboardView extends StatelessWidget {
                 StudentListView(isParent: false),
                 ParentListView(),
                 CycleListView(),
+                AttendanceManagementView(),
+                TechnicalRequirementsView(),
               ],
             ),
           ),
