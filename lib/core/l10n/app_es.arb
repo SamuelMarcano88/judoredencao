@@ -2,6 +2,8 @@
   "@@locale": "es",
   "appTitle": "MISIÓN PRÓXIMO CINTURÓN",
   "login": "Iniciar sesión",
+  "continueWithGoogle": "Continuar con Google",
+  "googleSignInUnavailable": "No se pudo iniciar el acceso con Google.",
   "createParentAccount": "Crear cuenta de responsable",
   "createAccount": "Crear cuenta",
   "fullName": "Nombre completo",

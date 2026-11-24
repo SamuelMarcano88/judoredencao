@@ -36,6 +36,17 @@ class AuthRepository {
     return client.auth.signInWithPassword(email: email, password: password);
   }
 
+  Future<bool> signInWithGoogle({required String redirectTo}) {
+    final client = _client;
+    if (client == null) {
+      throw StateError('Supabase no está configurado.');
+    }
+    return client.auth.signInWithOAuth(
+      OAuthProvider.google,
+      redirectTo: redirectTo,
+    );
+  }
+
   Future<AuthResponse> signUpParent({
     required String fullName,
     required String email,

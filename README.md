@@ -40,6 +40,20 @@ Em **Authentication → URL Configuration**, configure
 `https://judoredencao.netlify.app` como Site URL e permita essa URL em Redirect
 URLs para que os links de confirmação retornem à aplicação.
 
+## Login com Google
+
+O botão **Continuar com Google** usa OAuth do Supabase. Configure antes:
+
+1. No Google Cloud Console, crie um OAuth Client ID do tipo **Web application**.
+2. Em **Authorized redirect URIs**, adicione o callback indicado pelo Supabase:
+   `https://epvgcwdudhwuchbhhykl.supabase.co/auth/v1/callback`.
+3. No Supabase, abra **Authentication → Providers → Google**, habilite o provedor
+   e informe o Client ID e Client Secret do Google.
+4. Em **Authentication → URL Configuration → Redirect URLs**, permita
+   `https://judoredencao.netlify.app/**`.
+5. Salve e teste o botão. O Google Secret fica somente nas configurações do
+   Supabase; nunca o adicione ao Flutter, Netlify ou GitHub.
+
 ## Build de produção
 
 ```powershell

@@ -110,6 +110,18 @@ abstract class AppLocalizations {
   /// **'Entrar'**
   String get login;
 
+  /// No description provided for @continueWithGoogle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Continuar com Google'**
+  String get continueWithGoogle;
+
+  /// No description provided for @googleSignInUnavailable.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não foi possível iniciar o login com Google.'**
+  String get googleSignInUnavailable;
+
   /// No description provided for @createParentAccount.
   ///
   /// In pt, this message translates to:

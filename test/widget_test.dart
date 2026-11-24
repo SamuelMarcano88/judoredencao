@@ -4,9 +4,31 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:missao_proxima_faixa/core/l10n/app_localizations.dart';
+import 'package:missao_proxima_faixa/features/auth/presentation/login_screen.dart';
 import 'package:missao_proxima_faixa/features/auth/presentation/sign_up_screen.dart';
 
 void main() {
+  testWidgets('login offers Google sign-in', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        child: MaterialApp(
+          locale: const Locale('pt'),
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: const LoginScreen(),
+        ),
+      ),
+    );
+
+    await tester.pumpAndSettle();
+    expect(find.text('Continuar com Google'), findsOneWidget);
+  });
+
   testWidgets('registration requires full name and email', (
     WidgetTester tester,
   ) async {

@@ -2,6 +2,8 @@
   "@@locale": "pt",
   "appTitle": "MISSÃO PRÓXIMA FAIXA",
   "login": "Entrar",
+  "continueWithGoogle": "Continuar com Google",
+  "googleSignInUnavailable": "Não foi possível iniciar o login com Google.",
   "createParentAccount": "Criar conta de responsável",
   "createAccount": "Criar conta",
   "fullName": "Nome completo",

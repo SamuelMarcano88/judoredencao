@@ -15,6 +15,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get login => 'Iniciar sesión';
 
   @override
+  String get continueWithGoogle => 'Continuar con Google';
+
+  @override
+  String get googleSignInUnavailable =>
+      'No se pudo iniciar el acceso con Google.';
+
+  @override
   String get createParentAccount => 'Crear cuenta de responsable';
 
   @override
