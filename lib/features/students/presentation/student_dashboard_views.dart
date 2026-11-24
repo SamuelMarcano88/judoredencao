@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:missao_proxima_faixa/core/l10n/app_localizations.dart';
+import 'package:missao_proxima_faixa/features/passport/presentation/cycle_management_screen.dart';
 import 'package:missao_proxima_faixa/features/students/domain/parent_record.dart';
 import 'package:missao_proxima_faixa/features/students/domain/student_record.dart';
 import 'providers.dart';
@@ -14,7 +15,7 @@ class AdminDashboardView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Column(
         children: [
           TabBar(
@@ -24,11 +25,16 @@ class AdminDashboardView extends StatelessWidget {
                 text: l10n.parents,
                 icon: const Icon(Icons.family_restroom_outlined),
               ),
+              Tab(text: l10n.cycles, icon: const Icon(Icons.autorenew)),
             ],
           ),
           const Expanded(
             child: TabBarView(
-              children: [StudentListView(isParent: false), ParentListView()],
+              children: [
+                StudentListView(isParent: false),
+                ParentListView(),
+                CycleListView(),
+              ],
             ),
           ),
         ],
@@ -107,12 +113,22 @@ class _StudentCard extends StatelessWidget {
     ];
     return Card(
       child: ListTile(
-        onTap: isParent
-            ? null
-            : () => context.go('/admin/students/${student.id}/edit'),
+        onTap: () => context.go(
+          isParent
+              ? '/responsavel/filhos/${student.id}/passaporte'
+              : '/admin/students/${student.id}/passport',
+        ),
         leading: const CircleAvatar(child: Icon(Icons.sports_martial_arts)),
         title: Text(student.fullName),
         subtitle: details.isEmpty ? null : Text(details.join(' • ')),
+        trailing: isParent
+            ? const Icon(Icons.chevron_right)
+            : IconButton(
+                tooltip: l10n.editStudent,
+                onPressed: () =>
+                    context.go('/admin/students/${student.id}/edit'),
+                icon: const Icon(Icons.edit_outlined),
+              ),
       ),
     );
   }

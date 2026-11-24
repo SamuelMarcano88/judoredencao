@@ -416,11 +416,251 @@ abstract class AppLocalizations {
   /// **'Tentar novamente'**
   String get retry;
 
-  /// No description provided for @stageOne.
+  /// No description provided for @passport.
   ///
   /// In pt, this message translates to:
-  /// **'Etapa 1: arquitetura e autenticação'**
-  String get stageOne;
+  /// **'Passaporte'**
+  String get passport;
+
+  /// No description provided for @cycles.
+  ///
+  /// In pt, this message translates to:
+  /// **'Ciclos'**
+  String get cycles;
+
+  /// No description provided for @currentBelt.
+  ///
+  /// In pt, this message translates to:
+  /// **'Faixa atual'**
+  String get currentBelt;
+
+  /// No description provided for @nextBelt.
+  ///
+  /// In pt, this message translates to:
+  /// **'Próxima faixa'**
+  String get nextBelt;
+
+  /// No description provided for @beltNotDefined.
+  ///
+  /// In pt, this message translates to:
+  /// **'Faixa ainda não definida'**
+  String get beltNotDefined;
+
+  /// No description provided for @currentCycle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Ciclo atual'**
+  String get currentCycle;
+
+  /// No description provided for @noCycleAssigned.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nenhum ciclo foi atribuído a este aluno.'**
+  String get noCycleAssigned;
+
+  /// No description provided for @cycleProgress.
+  ///
+  /// In pt, this message translates to:
+  /// **'Progresso do ciclo'**
+  String get cycleProgress;
+
+  /// No description provided for @requiredActivitiesProgress.
+  ///
+  /// In pt, this message translates to:
+  /// **'{completed} de {total} atividades obrigatórias'**
+  String requiredActivitiesProgress(int completed, int total);
+
+  /// No description provided for @checklist.
+  ///
+  /// In pt, this message translates to:
+  /// **'Checklist'**
+  String get checklist;
+
+  /// No description provided for @noChecklistActivities.
+  ///
+  /// In pt, this message translates to:
+  /// **'Este ciclo ainda não tem atividades.'**
+  String get noChecklistActivities;
+
+  /// No description provided for @optionalActivity.
+  ///
+  /// In pt, this message translates to:
+  /// **'Opcional'**
+  String get optionalActivity;
+
+  /// No description provided for @createCycle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Criar ciclo'**
+  String get createCycle;
+
+  /// No description provided for @createCycleDetails.
+  ///
+  /// In pt, this message translates to:
+  /// **'Configure o ciclo, os alunos e as atividades.'**
+  String get createCycleDetails;
+
+  /// No description provided for @cycleName.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nome do ciclo'**
+  String get cycleName;
+
+  /// No description provided for @cycleNameRequired.
+  ///
+  /// In pt, this message translates to:
+  /// **'Informe o nome do ciclo.'**
+  String get cycleNameRequired;
+
+  /// No description provided for @startDate.
+  ///
+  /// In pt, this message translates to:
+  /// **'Data de início'**
+  String get startDate;
+
+  /// No description provided for @endDateOptional.
+  ///
+  /// In pt, this message translates to:
+  /// **'Data de término (opcional)'**
+  String get endDateOptional;
+
+  /// No description provided for @clearDate.
+  ///
+  /// In pt, this message translates to:
+  /// **'Limpar data'**
+  String get clearDate;
+
+  /// No description provided for @cycleDateRangeInvalid.
+  ///
+  /// In pt, this message translates to:
+  /// **'A data final deve ser igual ou posterior à inicial.'**
+  String get cycleDateRangeInvalid;
+
+  /// No description provided for @noBeltSelected.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não definida'**
+  String get noBeltSelected;
+
+  /// No description provided for @cycleParticipants.
+  ///
+  /// In pt, this message translates to:
+  /// **'Alunos participantes'**
+  String get cycleParticipants;
+
+  /// No description provided for @selectParticipantsHint.
+  ///
+  /// In pt, this message translates to:
+  /// **'Selecione pelo menos um aluno.'**
+  String get selectParticipantsHint;
+
+  /// No description provided for @noStudentsAvailable.
+  ///
+  /// In pt, this message translates to:
+  /// **'Cadastre alunos antes de criar um ciclo.'**
+  String get noStudentsAvailable;
+
+  /// No description provided for @checklistActivities.
+  ///
+  /// In pt, this message translates to:
+  /// **'Atividades do checklist'**
+  String get checklistActivities;
+
+  /// No description provided for @addActivity.
+  ///
+  /// In pt, this message translates to:
+  /// **'Adicionar atividade'**
+  String get addActivity;
+
+  /// No description provided for @activityNamePortuguese.
+  ///
+  /// In pt, this message translates to:
+  /// **'Atividade em português'**
+  String get activityNamePortuguese;
+
+  /// No description provided for @activityNameSpanish.
+  ///
+  /// In pt, this message translates to:
+  /// **'Atividade em espanhol'**
+  String get activityNameSpanish;
+
+  /// No description provided for @activityNameRequired.
+  ///
+  /// In pt, this message translates to:
+  /// **'Informe a atividade nos dois idiomas.'**
+  String get activityNameRequired;
+
+  /// No description provided for @categoryNamePortugueseOptional.
+  ///
+  /// In pt, this message translates to:
+  /// **'Categoria em português (opcional)'**
+  String get categoryNamePortugueseOptional;
+
+  /// No description provided for @categoryNameSpanishOptional.
+  ///
+  /// In pt, this message translates to:
+  /// **'Categoria em espanhol (opcional)'**
+  String get categoryNameSpanishOptional;
+
+  /// No description provided for @categoryNamesBothRequired.
+  ///
+  /// In pt, this message translates to:
+  /// **'Informe a categoria nos dois idiomas ou deixe ambos vazios.'**
+  String get categoryNamesBothRequired;
+
+  /// No description provided for @removeActivity.
+  ///
+  /// In pt, this message translates to:
+  /// **'Remover atividade'**
+  String get removeActivity;
+
+  /// No description provided for @createCycleFailed.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não foi possível criar o ciclo'**
+  String get createCycleFailed;
+
+  /// No description provided for @noCycles.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nenhum ciclo foi criado ainda.'**
+  String get noCycles;
+
+  /// No description provided for @cycleStatusActive.
+  ///
+  /// In pt, this message translates to:
+  /// **'Ativo'**
+  String get cycleStatusActive;
+
+  /// No description provided for @cycleStatusPlanned.
+  ///
+  /// In pt, this message translates to:
+  /// **'Planejado'**
+  String get cycleStatusPlanned;
+
+  /// No description provided for @cycleStatusCompleted.
+  ///
+  /// In pt, this message translates to:
+  /// **'Concluído'**
+  String get cycleStatusCompleted;
+
+  /// No description provided for @requiredActivity.
+  ///
+  /// In pt, this message translates to:
+  /// **'Atividade obrigatória'**
+  String get requiredActivity;
+
+  /// No description provided for @activityUpdateFailed.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não foi possível atualizar a atividade'**
+  String get activityUpdateFailed;
+
+  /// No description provided for @studentPassportUnavailable.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não foi possível localizar o passaporte deste aluno.'**
+  String get studentPassportUnavailable;
 
   /// No description provided for @invalidCredentials.
   ///

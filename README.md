@@ -81,6 +81,22 @@ senha. A função usa a chave privilegiada somente no servidor Supabase; nunca
 configure `service_role` ou `SUPABASE_SERVICE_ROLE_KEY` no Flutter, Netlify ou
 GitHub.
 
+## Etapa 3: passaportes, ciclos e checklists
+
+O administrador pode criar ciclos, definir os alunos participantes e configurar
+as atividades em português e espanhol. Responsáveis acompanham o passaporte dos
+filhos; cada aluno pode marcar suas próprias atividades como concluídas. As
+permissões são aplicadas por RLS no Supabase.
+
+Para publicar o esquema da Etapa 3 no Supabase:
+
+```powershell
+supabase db push
+```
+
+Faixas são opcionais no cadastro do ciclo. Elas só aparecem como opções depois
+que houver registros na tabela `belts`.
+
 ## Build de produção
 
 ```powershell

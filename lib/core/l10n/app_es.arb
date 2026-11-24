@@ -53,7 +53,57 @@
   "studentUpdateFailed": "No se pudo actualizar al alumno",
   "dashboardLoadError": "No se pudieron cargar los datos",
   "retry": "Reintentar",
-  "stageOne": "Etapa 1: arquitectura y autenticación",
+  "passport": "Pasaporte",
+  "cycles": "Ciclos",
+  "currentBelt": "Cinturón actual",
+  "nextBelt": "Próximo cinturón",
+  "beltNotDefined": "Cinturón aún no definido",
+  "currentCycle": "Ciclo actual",
+  "noCycleAssigned": "No se asignó ningún ciclo a este alumno.",
+  "cycleProgress": "Progreso del ciclo",
+  "requiredActivitiesProgress": "{completed} de {total} actividades obligatorias",
+  "@requiredActivitiesProgress": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "checklist": "Lista de actividades",
+  "noChecklistActivities": "Este ciclo todavía no tiene actividades.",
+  "optionalActivity": "Opcional",
+  "createCycle": "Crear ciclo",
+  "createCycleDetails": "Configura el ciclo, los alumnos y las actividades.",
+  "cycleName": "Nombre del ciclo",
+  "cycleNameRequired": "Ingresa el nombre del ciclo.",
+  "startDate": "Fecha de inicio",
+  "endDateOptional": "Fecha de finalización (opcional)",
+  "clearDate": "Quitar fecha",
+  "cycleDateRangeInvalid": "La fecha final debe ser igual o posterior a la inicial.",
+  "noBeltSelected": "Sin definir",
+  "cycleParticipants": "Alumnos participantes",
+  "selectParticipantsHint": "Selecciona al menos un alumno.",
+  "noStudentsAvailable": "Registra alumnos antes de crear un ciclo.",
+  "checklistActivities": "Actividades de la lista",
+  "addActivity": "Agregar actividad",
+  "activityNamePortuguese": "Actividad en portugués",
+  "activityNameSpanish": "Actividad en español",
+  "activityNameRequired": "Ingresa la actividad en ambos idiomas.",
+  "categoryNamePortugueseOptional": "Categoría en portugués (opcional)",
+  "categoryNameSpanishOptional": "Categoría en español (opcional)",
+  "categoryNamesBothRequired": "Ingresa la categoría en ambos idiomas o deja ambos vacíos.",
+  "removeActivity": "Quitar actividad",
+  "createCycleFailed": "No se pudo crear el ciclo",
+  "noCycles": "Todavía no se creó ningún ciclo.",
+  "cycleStatusActive": "Activo",
+  "cycleStatusPlanned": "Planificado",
+  "cycleStatusCompleted": "Completado",
+  "requiredActivity": "Actividad obligatoria",
+  "activityUpdateFailed": "No se pudo actualizar la actividad",
+  "studentPassportUnavailable": "No se pudo encontrar el pasaporte de este alumno.",
   "invalidCredentials": "Correo electrónico o contraseña inválidos.",
   "unexpectedError": "No fue posible completar la operación."
 }

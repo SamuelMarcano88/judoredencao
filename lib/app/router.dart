@@ -5,6 +5,8 @@ import '../features/auth/domain/user_role.dart';
 import '../features/auth/presentation/login_screen.dart';
 import '../features/auth/presentation/sign_up_screen.dart';
 import '../features/auth/presentation/providers.dart';
+import '../features/passport/presentation/cycle_management_screen.dart';
+import '../features/passport/presentation/student_passport_view.dart';
 import '../features/students/presentation/create_student_screen.dart';
 import '../features/students/presentation/edit_student_screen.dart';
 import 'shell/dashboard_shell.dart';
@@ -66,8 +68,24 @@ final routerProvider = Provider<GoRouter>((ref) {
             EditStudentScreen(studentId: state.pathParameters['studentId']!),
       ),
       GoRoute(
+        path: '/admin/students/:studentId/passport',
+        builder: (context, state) => StudentPassportScreen(
+          studentId: state.pathParameters['studentId']!,
+        ),
+      ),
+      GoRoute(
+        path: '/admin/cycles/new',
+        builder: (context, state) => const CreateCycleScreen(),
+      ),
+      GoRoute(
         path: '/responsavel/filhos/novo',
         builder: (context, state) => const CreateStudentScreen(),
+      ),
+      GoRoute(
+        path: '/responsavel/filhos/:studentId/passaporte',
+        builder: (context, state) => StudentPassportScreen(
+          studentId: state.pathParameters['studentId']!,
+        ),
       ),
     ],
   );

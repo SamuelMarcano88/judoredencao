@@ -53,7 +53,57 @@
   "studentUpdateFailed": "Não foi possível atualizar o aluno",
   "dashboardLoadError": "Não foi possível carregar os dados",
   "retry": "Tentar novamente",
-  "stageOne": "Etapa 1: arquitetura e autenticação",
+  "passport": "Passaporte",
+  "cycles": "Ciclos",
+  "currentBelt": "Faixa atual",
+  "nextBelt": "Próxima faixa",
+  "beltNotDefined": "Faixa ainda não definida",
+  "currentCycle": "Ciclo atual",
+  "noCycleAssigned": "Nenhum ciclo foi atribuído a este aluno.",
+  "cycleProgress": "Progresso do ciclo",
+  "requiredActivitiesProgress": "{completed} de {total} atividades obrigatórias",
+  "@requiredActivitiesProgress": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "checklist": "Checklist",
+  "noChecklistActivities": "Este ciclo ainda não tem atividades.",
+  "optionalActivity": "Opcional",
+  "createCycle": "Criar ciclo",
+  "createCycleDetails": "Configure o ciclo, os alunos e as atividades.",
+  "cycleName": "Nome do ciclo",
+  "cycleNameRequired": "Informe o nome do ciclo.",
+  "startDate": "Data de início",
+  "endDateOptional": "Data de término (opcional)",
+  "clearDate": "Limpar data",
+  "cycleDateRangeInvalid": "A data final deve ser igual ou posterior à inicial.",
+  "noBeltSelected": "Não definida",
+  "cycleParticipants": "Alunos participantes",
+  "selectParticipantsHint": "Selecione pelo menos um aluno.",
+  "noStudentsAvailable": "Cadastre alunos antes de criar um ciclo.",
+  "checklistActivities": "Atividades do checklist",
+  "addActivity": "Adicionar atividade",
+  "activityNamePortuguese": "Atividade em português",
+  "activityNameSpanish": "Atividade em espanhol",
+  "activityNameRequired": "Informe a atividade nos dois idiomas.",
+  "categoryNamePortugueseOptional": "Categoria em português (opcional)",
+  "categoryNameSpanishOptional": "Categoria em espanhol (opcional)",
+  "categoryNamesBothRequired": "Informe a categoria nos dois idiomas ou deixe ambos vazios.",
+  "removeActivity": "Remover atividade",
+  "createCycleFailed": "Não foi possível criar o ciclo",
+  "noCycles": "Nenhum ciclo foi criado ainda.",
+  "cycleStatusActive": "Ativo",
+  "cycleStatusPlanned": "Planejado",
+  "cycleStatusCompleted": "Concluído",
+  "requiredActivity": "Atividade obrigatória",
+  "activityUpdateFailed": "Não foi possível atualizar a atividade",
+  "studentPassportUnavailable": "Não foi possível localizar o passaporte deste aluno.",
   "invalidCredentials": "E-mail ou senha inválidos.",
   "unexpectedError": "Não foi possível concluir a operação."
 }

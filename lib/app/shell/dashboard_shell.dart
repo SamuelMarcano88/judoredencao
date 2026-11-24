@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:missao_proxima_faixa/core/l10n/app_localizations.dart';
 import 'package:missao_proxima_faixa/features/auth/domain/user_role.dart';
 import 'package:missao_proxima_faixa/features/auth/presentation/providers.dart';
+import 'package:missao_proxima_faixa/features/passport/presentation/student_passport_view.dart';
 import 'package:missao_proxima_faixa/features/students/presentation/student_dashboard_views.dart';
 
 class DashboardShell extends ConsumerWidget {
@@ -36,7 +37,7 @@ class DashboardShell extends ConsumerWidget {
       body: switch (role) {
         UserRole.admin => const AdminDashboardView(),
         UserRole.parent => const ParentDashboardView(),
-        UserRole.student => Center(child: Text(l10n.stageOne)),
+        UserRole.student => const StudentPassportView(allowCompletion: true),
         UserRole.unknown => const SizedBox.shrink(),
       },
       floatingActionButton: role == UserRole.admin || role == UserRole.parent

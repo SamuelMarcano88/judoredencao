@@ -175,7 +175,134 @@ class AppLocalizationsPt extends AppLocalizations {
   String get retry => 'Tentar novamente';
 
   @override
-  String get stageOne => 'Etapa 1: arquitetura e autenticação';
+  String get passport => 'Passaporte';
+
+  @override
+  String get cycles => 'Ciclos';
+
+  @override
+  String get currentBelt => 'Faixa atual';
+
+  @override
+  String get nextBelt => 'Próxima faixa';
+
+  @override
+  String get beltNotDefined => 'Faixa ainda não definida';
+
+  @override
+  String get currentCycle => 'Ciclo atual';
+
+  @override
+  String get noCycleAssigned => 'Nenhum ciclo foi atribuído a este aluno.';
+
+  @override
+  String get cycleProgress => 'Progresso do ciclo';
+
+  @override
+  String requiredActivitiesProgress(int completed, int total) {
+    return '$completed de $total atividades obrigatórias';
+  }
+
+  @override
+  String get checklist => 'Checklist';
+
+  @override
+  String get noChecklistActivities => 'Este ciclo ainda não tem atividades.';
+
+  @override
+  String get optionalActivity => 'Opcional';
+
+  @override
+  String get createCycle => 'Criar ciclo';
+
+  @override
+  String get createCycleDetails =>
+      'Configure o ciclo, os alunos e as atividades.';
+
+  @override
+  String get cycleName => 'Nome do ciclo';
+
+  @override
+  String get cycleNameRequired => 'Informe o nome do ciclo.';
+
+  @override
+  String get startDate => 'Data de início';
+
+  @override
+  String get endDateOptional => 'Data de término (opcional)';
+
+  @override
+  String get clearDate => 'Limpar data';
+
+  @override
+  String get cycleDateRangeInvalid =>
+      'A data final deve ser igual ou posterior à inicial.';
+
+  @override
+  String get noBeltSelected => 'Não definida';
+
+  @override
+  String get cycleParticipants => 'Alunos participantes';
+
+  @override
+  String get selectParticipantsHint => 'Selecione pelo menos um aluno.';
+
+  @override
+  String get noStudentsAvailable => 'Cadastre alunos antes de criar um ciclo.';
+
+  @override
+  String get checklistActivities => 'Atividades do checklist';
+
+  @override
+  String get addActivity => 'Adicionar atividade';
+
+  @override
+  String get activityNamePortuguese => 'Atividade em português';
+
+  @override
+  String get activityNameSpanish => 'Atividade em espanhol';
+
+  @override
+  String get activityNameRequired => 'Informe a atividade nos dois idiomas.';
+
+  @override
+  String get categoryNamePortugueseOptional =>
+      'Categoria em português (opcional)';
+
+  @override
+  String get categoryNameSpanishOptional => 'Categoria em espanhol (opcional)';
+
+  @override
+  String get categoryNamesBothRequired =>
+      'Informe a categoria nos dois idiomas ou deixe ambos vazios.';
+
+  @override
+  String get removeActivity => 'Remover atividade';
+
+  @override
+  String get createCycleFailed => 'Não foi possível criar o ciclo';
+
+  @override
+  String get noCycles => 'Nenhum ciclo foi criado ainda.';
+
+  @override
+  String get cycleStatusActive => 'Ativo';
+
+  @override
+  String get cycleStatusPlanned => 'Planejado';
+
+  @override
+  String get cycleStatusCompleted => 'Concluído';
+
+  @override
+  String get requiredActivity => 'Atividade obrigatória';
+
+  @override
+  String get activityUpdateFailed => 'Não foi possível atualizar a atividade';
+
+  @override
+  String get studentPassportUnavailable =>
+      'Não foi possível localizar o passaporte deste aluno.';
 
   @override
   String get invalidCredentials => 'E-mail ou senha inválidos.';
