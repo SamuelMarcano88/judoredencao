@@ -59,3 +59,17 @@ O botão **Continuar com Google** usa OAuth do Supabase. Configure antes:
 ```powershell
 flutter build web --release --dart-define=SUPABASE_URL=https://SEU-PROJETO.supabase.co --dart-define=SUPABASE_ANON_KEY=SUA_CHAVE_ANON
 ```
+
+O build do Netlify usa `scripts/build_web.js`, que passa as variáveis de ambiente
+ao Flutter sem depender da sintaxe de expansão do shell do sistema operacional.
+
+Para fazer um deploy manual a partir do Windows, use os valores públicos do
+projeto Supabase e evite que o CLI local tente reconstruir com variáveis
+mascaradas:
+
+```powershell
+$env:SUPABASE_URL = "https://SEU-PROJETO.supabase.co"
+$env:SUPABASE_ANON_KEY = "SUA_CHAVE_PUBLICA"
+node scripts/build_web.js
+netlify deploy --prod --dir=build/web --no-build
+```
