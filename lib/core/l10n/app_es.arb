@@ -14,6 +14,7 @@
   "confirmEmailHint": "Revisa tu correo para confirmar la cuenta y luego inicia sesión.",
   "parentRegistrationHint": "Regístrate como responsable para acompañar a tus hijos.",
   "profileNotConfigured": "Perfil no configurado. Contacta al administrador de la academia.",
+  "authResponseDecodeHint": "Supabase no pudo completar el registro. Revisa SMTP y los Auth Logs del proyecto; el SMTP predeterminado solo envía a correos autorizados del equipo.",
   "email": "Correo electrónico",
   "password": "Contraseña",
   "logout": "Cerrar sesión",

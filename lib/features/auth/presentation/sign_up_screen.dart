@@ -50,6 +50,14 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
       } else {
         setState(() => _submitted = true);
       }
+    } on AuthUnknownException catch (error) {
+      if (!mounted) return;
+      final message = error.message == 'Failed to decode error response'
+          ? l10n.authResponseDecodeHint
+          : error.message;
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(message)));
     } on AuthException catch (error) {
       if (!mounted) return;
       ScaffoldMessenger.of(

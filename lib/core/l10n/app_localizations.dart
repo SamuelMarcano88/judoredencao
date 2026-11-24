@@ -182,6 +182,12 @@ abstract class AppLocalizations {
   /// **'Perfil não configurado. Fale com o administrador da academia.'**
   String get profileNotConfigured;
 
+  /// No description provided for @authResponseDecodeHint.
+  ///
+  /// In pt, this message translates to:
+  /// **'O Supabase não conseguiu concluir o cadastro. Verifique a configuração SMTP e os Logs de Auth do projeto; o SMTP padrão só envia para e-mails autorizados da equipe.'**
+  String get authResponseDecodeHint;
+
   /// No description provided for @email.
   ///
   /// In pt, this message translates to:

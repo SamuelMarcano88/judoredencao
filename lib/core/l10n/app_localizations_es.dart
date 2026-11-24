@@ -55,6 +55,10 @@ class AppLocalizationsEs extends AppLocalizations {
       'Perfil no configurado. Contacta al administrador de la academia.';
 
   @override
+  String get authResponseDecodeHint =>
+      'Supabase no pudo completar el registro. Revisa SMTP y los Auth Logs del proyecto; el SMTP predeterminado solo envía a correos autorizados del equipo.';
+
+  @override
   String get email => 'Correo electrónico';
 
   @override
