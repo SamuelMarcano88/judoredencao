@@ -26,15 +26,25 @@ papel de administrador pela aplicação.
 Para configurar a conta do professor:
 
 1. Crie a conta com seu e-mail e confirme o endereço, se solicitado.
-2. No Supabase, abra **SQL Editor** e execute, substituindo pelo e-mail usado:
+2. No Supabase, abra **SQL Editor** e localize a conta que realmente usará para
+   entrar (Google e senha podem ter IDs diferentes):
+
+   ```sql
+   select id, email, raw_app_meta_data->>'provider' as provider
+   from auth.users
+   where lower(email) = lower('seu-email@exemplo.com')
+   order by created_at desc;
+   ```
+
+3. Promova somente o UUID correto:
 
    ```sql
    update public.profiles
    set role = 'admin'
-   where email = 'seu-email@exemplo.com';
+   where id = 'UUID_DA_CONTA_CORRETA';
    ```
 
-3. Confirme que exatamente um perfil foi atualizado. Depois, entre novamente.
+4. Confirme que exatamente um perfil foi atualizado. Depois, saia e entre novamente.
 
 Em **Authentication → URL Configuration**, configure
 `https://judoredencao.netlify.app` como Site URL e permita essa URL em Redirect
@@ -53,6 +63,23 @@ O botão **Continuar com Google** usa OAuth do Supabase. Configure antes:
    `https://judoredencao.netlify.app/**`.
 5. Salve e teste o botão. O Google Secret fica somente nas configurações do
    Supabase; nunca o adicione ao Flutter, Netlify ou GitHub.
+
+## Etapa 2: responsáveis e alunos
+
+Depois de atualizar o código, aplique a migração de acesso aos alunos e publique
+a Edge Function que cria as contas individuais:
+
+```powershell
+supabase login
+supabase link --project-ref epvgcwdudhwuchbhhykl
+supabase db push
+supabase functions deploy create-student-account
+```
+
+O cadastro cria uma conta Supabase individual por aluno com nome de usuário e
+senha. A função usa a chave privilegiada somente no servidor Supabase; nunca
+configure `service_role` ou `SUPABASE_SERVICE_ROLE_KEY` no Flutter, Netlify ou
+GitHub.
 
 ## Build de produção
 

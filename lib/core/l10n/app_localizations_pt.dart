@@ -15,6 +15,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get login => 'Entrar';
 
   @override
+  String get loginAsParent => 'Responsável';
+
+  @override
+  String get loginAsStudent => 'Aluno';
+
+  @override
+  String get username => 'Usuário';
+
+  @override
   String get continueWithGoogle => 'Continuar com Google';
 
   @override
@@ -90,6 +99,80 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get studentDashboard => 'Painel do aluno';
+
+  @override
+  String get students => 'Alunos';
+
+  @override
+  String get parents => 'Responsáveis';
+
+  @override
+  String get myChildren => 'Meus filhos';
+
+  @override
+  String get addStudent => 'Cadastrar aluno';
+
+  @override
+  String get editStudent => 'Editar aluno';
+
+  @override
+  String get save => 'Salvar';
+
+  @override
+  String get createStudent => 'Criar perfil e acesso do aluno';
+
+  @override
+  String get studentDetails => 'Dados do aluno';
+
+  @override
+  String get studentAccessDetails => 'Acesso individual do aluno';
+
+  @override
+  String get studentName => 'Nome completo do aluno';
+
+  @override
+  String get studentNameRequired => 'Informe o nome completo do aluno.';
+
+  @override
+  String get birthDateOptional => 'Data de nascimento (opcional)';
+
+  @override
+  String get studentPassword => 'Senha do aluno';
+
+  @override
+  String get usernameRules =>
+      '3 a 30 caracteres: letras, números, ponto, hífen ou sublinhado.';
+
+  @override
+  String get relationshipOptional => 'Parentesco (opcional)';
+
+  @override
+  String get parent => 'Responsável';
+
+  @override
+  String get selectParent => 'Selecione um responsável.';
+
+  @override
+  String get noParentsForAssignment =>
+      'Cadastre primeiro uma conta de responsável.';
+
+  @override
+  String get noStudents => 'Nenhum aluno cadastrado ainda.';
+
+  @override
+  String get noParents => 'Nenhuma conta de responsável encontrada.';
+
+  @override
+  String get studentCreationFailed => 'Não foi possível cadastrar o aluno';
+
+  @override
+  String get studentUpdateFailed => 'Não foi possível atualizar o aluno';
+
+  @override
+  String get dashboardLoadError => 'Não foi possível carregar os dados';
+
+  @override
+  String get retry => 'Tentar novamente';
 
   @override
   String get stageOne => 'Etapa 1: arquitetura e autenticação';

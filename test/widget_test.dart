@@ -6,6 +6,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:missao_proxima_faixa/core/l10n/app_localizations.dart';
 import 'package:missao_proxima_faixa/features/auth/presentation/login_screen.dart';
 import 'package:missao_proxima_faixa/features/auth/presentation/sign_up_screen.dart';
+import 'package:missao_proxima_faixa/features/students/domain/student_record.dart';
+import 'package:missao_proxima_faixa/features/students/presentation/providers.dart';
+import 'package:missao_proxima_faixa/features/students/presentation/student_dashboard_views.dart';
 
 void main() {
   testWidgets('login offers Google sign-in', (WidgetTester tester) async {
@@ -27,6 +30,48 @@ void main() {
 
     await tester.pumpAndSettle();
     expect(find.text('Continuar com Google'), findsOneWidget);
+
+    await tester.tap(find.text('Aluno'));
+    await tester.pumpAndSettle();
+    expect(find.text('Usuário'), findsOneWidget);
+    expect(find.text('Continuar com Google'), findsNothing);
+    expect(find.text('Criar conta de responsável'), findsNothing);
+  });
+
+  testWidgets('parent dashboard lists linked children', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          studentsProvider.overrideWith(
+            (ref) async => [
+              StudentRecord(
+                id: 'student-id',
+                fullName: 'João Silva',
+                birthDate: DateTime(2018, 3, 5),
+                username: 'joao',
+              ),
+            ],
+          ),
+        ],
+        child: MaterialApp(
+          locale: const Locale('pt'),
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: const Scaffold(body: ParentDashboardView()),
+        ),
+      ),
+    );
+
+    await tester.pumpAndSettle();
+    expect(find.text('João Silva'), findsOneWidget);
+    expect(find.textContaining('Usuário: joao'), findsOneWidget);
   });
 
   testWidgets('registration requires full name and email', (

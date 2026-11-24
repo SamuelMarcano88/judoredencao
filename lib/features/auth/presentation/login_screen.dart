@@ -20,6 +20,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   bool _loading = false;
+  bool _studentMode = false;
 
   @override
   void dispose() {
@@ -33,10 +34,17 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     setState(() => _loading = true);
     try {
       final repository = ref.read(authRepositoryProvider);
-      await repository.signIn(
-        email: _emailController.text.trim(),
-        password: _passwordController.text,
-      );
+      if (_studentMode) {
+        await repository.signInStudent(
+          username: _emailController.text,
+          password: _passwordController.text,
+        );
+      } else {
+        await repository.signIn(
+          email: _emailController.text.trim(),
+          password: _passwordController.text,
+        );
+      }
       final role = await repository.getCurrentRole();
       if (!mounted) return;
       if (role == UserRole.unknown) {
@@ -107,6 +115,25 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           style: Theme.of(context).textTheme.headlineSmall,
                         ),
                         const SizedBox(height: 24),
+                        SegmentedButton<bool>(
+                          segments: [
+                            ButtonSegment(
+                              value: false,
+                              label: Text(l10n.loginAsParent),
+                            ),
+                            ButtonSegment(
+                              value: true,
+                              label: Text(l10n.loginAsStudent),
+                            ),
+                          ],
+                          selected: {_studentMode},
+                          onSelectionChanged: (selection) {
+                            setState(() {
+                              _studentMode = selection.first;
+                            });
+                          },
+                        ),
+                        const SizedBox(height: 24),
                         if (!AppEnvironment.isSupabaseConfigured) ...[
                           Text(
                             l10n.configurationRequired,
@@ -122,11 +149,24 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         ],
                         TextFormField(
                           controller: _emailController,
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(labelText: l10n.email),
+                          keyboardType: _studentMode
+                              ? TextInputType.text
+                              : TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                            labelText: _studentMode
+                                ? l10n.username
+                                : l10n.email,
+                          ),
                           validator: (value) =>
-                              value == null || value.trim().isEmpty
-                              ? l10n.email
+                              value == null ||
+                                  (_studentMode
+                                      ? !RegExp(
+                                          r'^[a-zA-Z0-9][a-zA-Z0-9._-]{2,29}$',
+                                        ).hasMatch(value.trim())
+                                      : value.trim().isEmpty)
+                              ? _studentMode
+                                    ? l10n.username
+                                    : l10n.email
                               : null,
                         ),
                         const SizedBox(height: 16),
@@ -155,21 +195,23 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                               : Text(l10n.login),
                         ),
                         const SizedBox(height: 12),
-                        OutlinedButton.icon(
-                          onPressed:
-                              !_loading && AppEnvironment.isSupabaseConfigured
-                              ? () => _signInWithGoogle(l10n)
-                              : null,
-                          icon: const Icon(Icons.g_mobiledata),
-                          label: Text(l10n.continueWithGoogle),
-                        ),
-                        const SizedBox(height: 12),
-                        TextButton(
-                          onPressed: AppEnvironment.isSupabaseConfigured
-                              ? () => context.go('/cadastro')
-                              : null,
-                          child: Text(l10n.createParentAccount),
-                        ),
+                        if (!_studentMode) ...[
+                          OutlinedButton.icon(
+                            onPressed:
+                                !_loading && AppEnvironment.isSupabaseConfigured
+                                ? () => _signInWithGoogle(l10n)
+                                : null,
+                            icon: const Icon(Icons.g_mobiledata),
+                            label: Text(l10n.continueWithGoogle),
+                          ),
+                          const SizedBox(height: 12),
+                          TextButton(
+                            onPressed: AppEnvironment.isSupabaseConfigured
+                                ? () => context.go('/cadastro')
+                                : null,
+                            child: Text(l10n.createParentAccount),
+                          ),
+                        ],
                       ],
                     ),
                   ),

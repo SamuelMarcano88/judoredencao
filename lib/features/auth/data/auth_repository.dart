@@ -36,6 +36,17 @@ class AuthRepository {
     return client.auth.signInWithPassword(email: email, password: password);
   }
 
+  Future<void> signInStudent({
+    required String username,
+    required String password,
+  }) {
+    final normalizedUsername = username.trim().toLowerCase();
+    return signIn(
+      email: 'student-$normalizedUsername@students.judoredencao.invalid',
+      password: password,
+    );
+  }
+
   Future<bool> signInWithGoogle({required String redirectTo}) {
     final client = _client;
     if (client == null) {

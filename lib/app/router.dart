@@ -5,6 +5,8 @@ import '../features/auth/domain/user_role.dart';
 import '../features/auth/presentation/login_screen.dart';
 import '../features/auth/presentation/sign_up_screen.dart';
 import '../features/auth/presentation/providers.dart';
+import '../features/students/presentation/create_student_screen.dart';
+import '../features/students/presentation/edit_student_screen.dart';
 import 'shell/dashboard_shell.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
@@ -53,6 +55,19 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/aluno',
         builder: (context, state) =>
             const DashboardShell(role: UserRole.student),
+      ),
+      GoRoute(
+        path: '/admin/students/new',
+        builder: (context, state) => const CreateStudentScreen(),
+      ),
+      GoRoute(
+        path: '/admin/students/:studentId/edit',
+        builder: (context, state) =>
+            EditStudentScreen(studentId: state.pathParameters['studentId']!),
+      ),
+      GoRoute(
+        path: '/responsavel/filhos/novo',
+        builder: (context, state) => const CreateStudentScreen(),
       ),
     ],
   );

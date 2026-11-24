@@ -110,6 +110,24 @@ abstract class AppLocalizations {
   /// **'Entrar'**
   String get login;
 
+  /// No description provided for @loginAsParent.
+  ///
+  /// In pt, this message translates to:
+  /// **'Responsável'**
+  String get loginAsParent;
+
+  /// No description provided for @loginAsStudent.
+  ///
+  /// In pt, this message translates to:
+  /// **'Aluno'**
+  String get loginAsStudent;
+
+  /// No description provided for @username.
+  ///
+  /// In pt, this message translates to:
+  /// **'Usuário'**
+  String get username;
+
   /// No description provided for @continueWithGoogle.
   ///
   /// In pt, this message translates to:
@@ -253,6 +271,150 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'Painel do aluno'**
   String get studentDashboard;
+
+  /// No description provided for @students.
+  ///
+  /// In pt, this message translates to:
+  /// **'Alunos'**
+  String get students;
+
+  /// No description provided for @parents.
+  ///
+  /// In pt, this message translates to:
+  /// **'Responsáveis'**
+  String get parents;
+
+  /// No description provided for @myChildren.
+  ///
+  /// In pt, this message translates to:
+  /// **'Meus filhos'**
+  String get myChildren;
+
+  /// No description provided for @addStudent.
+  ///
+  /// In pt, this message translates to:
+  /// **'Cadastrar aluno'**
+  String get addStudent;
+
+  /// No description provided for @editStudent.
+  ///
+  /// In pt, this message translates to:
+  /// **'Editar aluno'**
+  String get editStudent;
+
+  /// No description provided for @save.
+  ///
+  /// In pt, this message translates to:
+  /// **'Salvar'**
+  String get save;
+
+  /// No description provided for @createStudent.
+  ///
+  /// In pt, this message translates to:
+  /// **'Criar perfil e acesso do aluno'**
+  String get createStudent;
+
+  /// No description provided for @studentDetails.
+  ///
+  /// In pt, this message translates to:
+  /// **'Dados do aluno'**
+  String get studentDetails;
+
+  /// No description provided for @studentAccessDetails.
+  ///
+  /// In pt, this message translates to:
+  /// **'Acesso individual do aluno'**
+  String get studentAccessDetails;
+
+  /// No description provided for @studentName.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nome completo do aluno'**
+  String get studentName;
+
+  /// No description provided for @studentNameRequired.
+  ///
+  /// In pt, this message translates to:
+  /// **'Informe o nome completo do aluno.'**
+  String get studentNameRequired;
+
+  /// No description provided for @birthDateOptional.
+  ///
+  /// In pt, this message translates to:
+  /// **'Data de nascimento (opcional)'**
+  String get birthDateOptional;
+
+  /// No description provided for @studentPassword.
+  ///
+  /// In pt, this message translates to:
+  /// **'Senha do aluno'**
+  String get studentPassword;
+
+  /// No description provided for @usernameRules.
+  ///
+  /// In pt, this message translates to:
+  /// **'3 a 30 caracteres: letras, números, ponto, hífen ou sublinhado.'**
+  String get usernameRules;
+
+  /// No description provided for @relationshipOptional.
+  ///
+  /// In pt, this message translates to:
+  /// **'Parentesco (opcional)'**
+  String get relationshipOptional;
+
+  /// No description provided for @parent.
+  ///
+  /// In pt, this message translates to:
+  /// **'Responsável'**
+  String get parent;
+
+  /// No description provided for @selectParent.
+  ///
+  /// In pt, this message translates to:
+  /// **'Selecione um responsável.'**
+  String get selectParent;
+
+  /// No description provided for @noParentsForAssignment.
+  ///
+  /// In pt, this message translates to:
+  /// **'Cadastre primeiro uma conta de responsável.'**
+  String get noParentsForAssignment;
+
+  /// No description provided for @noStudents.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nenhum aluno cadastrado ainda.'**
+  String get noStudents;
+
+  /// No description provided for @noParents.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nenhuma conta de responsável encontrada.'**
+  String get noParents;
+
+  /// No description provided for @studentCreationFailed.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não foi possível cadastrar o aluno'**
+  String get studentCreationFailed;
+
+  /// No description provided for @studentUpdateFailed.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não foi possível atualizar o aluno'**
+  String get studentUpdateFailed;
+
+  /// No description provided for @dashboardLoadError.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não foi possível carregar os dados'**
+  String get dashboardLoadError;
+
+  /// No description provided for @retry.
+  ///
+  /// In pt, this message translates to:
+  /// **'Tentar novamente'**
+  String get retry;
 
   /// No description provided for @stageOne.
   ///

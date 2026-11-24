@@ -15,6 +15,15 @@ class AppLocalizationsEs extends AppLocalizations {
   String get login => 'Iniciar sesión';
 
   @override
+  String get loginAsParent => 'Responsable';
+
+  @override
+  String get loginAsStudent => 'Alumno';
+
+  @override
+  String get username => 'Usuario';
+
+  @override
   String get continueWithGoogle => 'Continuar con Google';
 
   @override
@@ -91,6 +100,80 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get studentDashboard => 'Panel del alumno';
+
+  @override
+  String get students => 'Alumnos';
+
+  @override
+  String get parents => 'Responsables';
+
+  @override
+  String get myChildren => 'Mis hijos';
+
+  @override
+  String get addStudent => 'Registrar alumno';
+
+  @override
+  String get editStudent => 'Editar alumno';
+
+  @override
+  String get save => 'Guardar';
+
+  @override
+  String get createStudent => 'Crear perfil y acceso del alumno';
+
+  @override
+  String get studentDetails => 'Datos del alumno';
+
+  @override
+  String get studentAccessDetails => 'Acceso individual del alumno';
+
+  @override
+  String get studentName => 'Nombre completo del alumno';
+
+  @override
+  String get studentNameRequired => 'Ingresa el nombre completo del alumno.';
+
+  @override
+  String get birthDateOptional => 'Fecha de nacimiento (opcional)';
+
+  @override
+  String get studentPassword => 'Contraseña del alumno';
+
+  @override
+  String get usernameRules =>
+      '3 a 30 caracteres: letras, números, punto, guion o guion bajo.';
+
+  @override
+  String get relationshipOptional => 'Parentesco (opcional)';
+
+  @override
+  String get parent => 'Responsable';
+
+  @override
+  String get selectParent => 'Selecciona un responsable.';
+
+  @override
+  String get noParentsForAssignment =>
+      'Primero registra una cuenta de responsable.';
+
+  @override
+  String get noStudents => 'Todavía no hay alumnos registrados.';
+
+  @override
+  String get noParents => 'No se encontraron cuentas de responsables.';
+
+  @override
+  String get studentCreationFailed => 'No se pudo registrar al alumno';
+
+  @override
+  String get studentUpdateFailed => 'No se pudo actualizar al alumno';
+
+  @override
+  String get dashboardLoadError => 'No se pudieron cargar los datos';
+
+  @override
+  String get retry => 'Reintentar';
 
   @override
   String get stageOne => 'Etapa 1: arquitectura y autenticación';
