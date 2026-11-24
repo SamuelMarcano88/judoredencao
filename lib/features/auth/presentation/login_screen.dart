@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:missao_proxima_faixa/core/config/app_environment.dart';
 import 'package:missao_proxima_faixa/core/l10n/app_localizations.dart';
+import 'package:missao_proxima_faixa/features/auth/domain/user_role.dart';
 import 'providers.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
@@ -29,15 +31,25 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _loading = true);
     try {
-      await ref.read(authRepositoryProvider).signIn(
-            email: _emailController.text.trim(),
-            password: _passwordController.text,
-          );
+      final repository = ref.read(authRepositoryProvider);
+      await repository.signIn(
+        email: _emailController.text.trim(),
+        password: _passwordController.text,
+      );
+      final role = await repository.getCurrentRole();
+      if (!mounted) return;
+      if (role == UserRole.unknown) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(l10n.profileNotConfigured)));
+        return;
+      }
+      context.go(role.routeName);
     } catch (_) {
       if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.invalidCredentials)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.invalidCredentials)));
     } finally {
       if (mounted) setState(() => _loading = false);
     }
@@ -73,18 +85,15 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 8),
-                      Text(
-                        l10n.configurationHint,
-                        textAlign: TextAlign.center,
-                      ),
+                      Text(l10n.configurationHint, textAlign: TextAlign.center),
                       const SizedBox(height: 24),
                     ],
                     TextFormField(
                       controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(labelText: l10n.email),
-                      validator: (value) => value == null ||
-                              value.trim().isEmpty
+                      validator: (value) =>
+                          value == null || value.trim().isEmpty
                           ? l10n.email
                           : null,
                     ),
@@ -94,25 +103,28 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       obscureText: true,
                       decoration: InputDecoration(labelText: l10n.password),
                       validator: (value) =>
-                          value == null || value.isEmpty
-                              ? l10n.password
-                              : null,
+                          value == null || value.isEmpty ? l10n.password : null,
                     ),
                     const SizedBox(height: 24),
                     FilledButton(
-                      onPressed: !_loading &&
-                              AppEnvironment.isSupabaseConfigured
+                      onPressed:
+                          !_loading && AppEnvironment.isSupabaseConfigured
                           ? () => _submit(l10n)
                           : null,
                       child: _loading
                           ? const SizedBox(
                               width: 22,
                               height: 22,
-                              child: CircularProgressIndicator(
-                                strokeWidth: 2,
-                              ),
+                              child: CircularProgressIndicator(strokeWidth: 2),
                             )
                           : Text(l10n.login),
+                    ),
+                    const SizedBox(height: 12),
+                    TextButton(
+                      onPressed: AppEnvironment.isSupabaseConfigured
+                          ? () => context.go('/cadastro')
+                          : null,
+                      child: Text(l10n.createParentAccount),
                     ),
                   ],
                 ),

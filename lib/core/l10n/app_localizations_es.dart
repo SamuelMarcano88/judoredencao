@@ -15,6 +15,46 @@ class AppLocalizationsEs extends AppLocalizations {
   String get login => 'Iniciar sesión';
 
   @override
+  String get createParentAccount => 'Crear cuenta de responsable';
+
+  @override
+  String get createAccount => 'Crear cuenta';
+
+  @override
+  String get fullName => 'Nombre completo';
+
+  @override
+  String get fullNameRequired => 'Ingresa tu nombre completo.';
+
+  @override
+  String get validEmailRequired => 'Ingresa un correo electrónico válido.';
+
+  @override
+  String get passwordMinimum =>
+      'La contraseña debe tener al menos 8 caracteres.';
+
+  @override
+  String get confirmPassword => 'Confirmar contraseña';
+
+  @override
+  String get passwordsDoNotMatch => 'Las contraseñas no coinciden.';
+
+  @override
+  String get accountCreated => '¡Cuenta creada correctamente!';
+
+  @override
+  String get confirmEmailHint =>
+      'Revisa tu correo para confirmar la cuenta y luego inicia sesión.';
+
+  @override
+  String get parentRegistrationHint =>
+      'Regístrate como responsable para acompañar a tus hijos.';
+
+  @override
+  String get profileNotConfigured =>
+      'Perfil no configurado. Contacta al administrador de la academia.';
+
+  @override
   String get email => 'Correo electrónico';
 
   @override

@@ -110,6 +110,78 @@ abstract class AppLocalizations {
   /// **'Entrar'**
   String get login;
 
+  /// No description provided for @createParentAccount.
+  ///
+  /// In pt, this message translates to:
+  /// **'Criar conta de responsável'**
+  String get createParentAccount;
+
+  /// No description provided for @createAccount.
+  ///
+  /// In pt, this message translates to:
+  /// **'Criar conta'**
+  String get createAccount;
+
+  /// No description provided for @fullName.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nome completo'**
+  String get fullName;
+
+  /// No description provided for @fullNameRequired.
+  ///
+  /// In pt, this message translates to:
+  /// **'Informe seu nome completo.'**
+  String get fullNameRequired;
+
+  /// No description provided for @validEmailRequired.
+  ///
+  /// In pt, this message translates to:
+  /// **'Informe um e-mail válido.'**
+  String get validEmailRequired;
+
+  /// No description provided for @passwordMinimum.
+  ///
+  /// In pt, this message translates to:
+  /// **'A senha deve ter pelo menos 8 caracteres.'**
+  String get passwordMinimum;
+
+  /// No description provided for @confirmPassword.
+  ///
+  /// In pt, this message translates to:
+  /// **'Confirmar senha'**
+  String get confirmPassword;
+
+  /// No description provided for @passwordsDoNotMatch.
+  ///
+  /// In pt, this message translates to:
+  /// **'As senhas não coincidem.'**
+  String get passwordsDoNotMatch;
+
+  /// No description provided for @accountCreated.
+  ///
+  /// In pt, this message translates to:
+  /// **'Conta criada com sucesso!'**
+  String get accountCreated;
+
+  /// No description provided for @confirmEmailHint.
+  ///
+  /// In pt, this message translates to:
+  /// **'Verifique seu e-mail para confirmar a conta e depois entre.'**
+  String get confirmEmailHint;
+
+  /// No description provided for @parentRegistrationHint.
+  ///
+  /// In pt, this message translates to:
+  /// **'Cadastre-se como responsável para acompanhar seus filhos.'**
+  String get parentRegistrationHint;
+
+  /// No description provided for @profileNotConfigured.
+  ///
+  /// In pt, this message translates to:
+  /// **'Perfil não configurado. Fale com o administrador da academia.'**
+  String get profileNotConfigured;
+
   /// No description provided for @email.
   ///
   /// In pt, this message translates to:

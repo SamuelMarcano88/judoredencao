@@ -26,8 +26,7 @@ class DashboardShell extends ConsumerWidget {
         actions: [
           IconButton(
             tooltip: l10n.logout,
-            onPressed: () =>
-                ref.read(authRepositoryProvider).signOut(),
+            onPressed: () => ref.read(authRepositoryProvider).signOut(),
             icon: const Icon(Icons.logout),
           ),
         ],

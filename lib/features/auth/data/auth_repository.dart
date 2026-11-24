@@ -28,7 +28,16 @@ class AuthRepository {
     return UserRole.fromDatabase(profile?['role'] as String?);
   }
 
-  Future<void> signIn({
+  Future<void> signIn({required String email, required String password}) {
+    final client = _client;
+    if (client == null) {
+      throw StateError('Supabase no está configurado.');
+    }
+    return client.auth.signInWithPassword(email: email, password: password);
+  }
+
+  Future<AuthResponse> signUpParent({
+    required String fullName,
     required String email,
     required String password,
   }) {
@@ -36,9 +45,10 @@ class AuthRepository {
     if (client == null) {
       throw StateError('Supabase no está configurado.');
     }
-    return client.auth.signInWithPassword(
+    return client.auth.signUp(
       email: email,
       password: password,
+      data: {'full_name': fullName, 'preferred_language': 'pt'},
     );
   }
 
