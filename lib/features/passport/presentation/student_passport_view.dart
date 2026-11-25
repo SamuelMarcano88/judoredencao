@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:missao_proxima_faixa/core/l10n/app_localizations.dart';
+import 'package:missao_proxima_faixa/features/progress/presentation/student_dashboard_overview.dart';
 import 'package:missao_proxima_faixa/features/progress/presentation/student_progress_sections.dart';
 
 import '../domain/student_passport.dart';
@@ -13,11 +14,13 @@ class StudentPassportView extends ConsumerWidget {
     this.studentId,
     this.allowCompletion = false,
     this.allowTechnicalEvaluation = false,
+    this.showProgressOverview = false,
   });
 
   final String? studentId;
   final bool allowCompletion;
   final bool allowTechnicalEvaluation;
+  final bool showProgressOverview;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -45,6 +48,7 @@ class StudentPassportView extends ConsumerWidget {
               studentId: studentId,
               allowCompletion: allowCompletion,
               allowTechnicalEvaluation: allowTechnicalEvaluation,
+              showProgressOverview: showProgressOverview,
             ),
     );
   }
@@ -56,11 +60,13 @@ class StudentPassportScreen extends StatelessWidget {
     required this.studentId,
     this.allowCompletion = false,
     this.allowTechnicalEvaluation = false,
+    this.showProgressOverview = false,
   });
 
   final String studentId;
   final bool allowCompletion;
   final bool allowTechnicalEvaluation;
+  final bool showProgressOverview;
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +77,7 @@ class StudentPassportScreen extends StatelessWidget {
         studentId: studentId,
         allowCompletion: allowCompletion,
         allowTechnicalEvaluation: allowTechnicalEvaluation,
+        showProgressOverview: showProgressOverview,
       ),
     );
   }
@@ -82,12 +89,14 @@ class _PassportContent extends ConsumerWidget {
     required this.studentId,
     required this.allowCompletion,
     required this.allowTechnicalEvaluation,
+    required this.showProgressOverview,
   });
 
   final StudentPassport passport;
   final String? studentId;
   final bool allowCompletion;
   final bool allowTechnicalEvaluation;
+  final bool showProgressOverview;
 
   Future<void> _toggleActivity(
     BuildContext context,
@@ -125,9 +134,7 @@ class _PassportContent extends ConsumerWidget {
     final currentBelt = isSpanish
         ? passport.currentBeltNameEs
         : passport.currentBeltNamePt;
-    final nextBelt = isSpanish
-        ? cycle?.nextBeltNameEs
-        : cycle?.nextBeltNamePt;
+    final nextBelt = isSpanish ? cycle?.nextBeltNameEs : cycle?.nextBeltNamePt;
 
     return SingleChildScrollView(
       padding: const EdgeInsets.all(24),
@@ -165,6 +172,13 @@ class _PassportContent extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: 16),
+              if (showProgressOverview) ...[
+                StudentDashboardOverview(
+                  studentId: passport.studentId,
+                  passportValue: passport,
+                ),
+                const SizedBox(height: 16),
+              ],
               if (cycle == null)
                 Card(
                   child: Padding(
@@ -226,15 +240,12 @@ class _PassportContent extends ConsumerWidget {
                           )
                         else
                           ...cycle.items.map((item) {
-                            final name = isSpanish
-                                ? item.nameEs
-                                : item.namePt;
+                            final name = isSpanish ? item.nameEs : item.namePt;
                             final description = isSpanish
                                 ? item.descriptionEs
                                 : item.descriptionPt;
                             final subtitle = [
-                              if (description != null &&
-                                  description.isNotEmpty)
+                              if (description != null && description.isNotEmpty)
                                 description,
                               if (!item.required) l10n.optionalActivity,
                             ].join(' • ');
@@ -339,10 +350,7 @@ class _BeltLine extends StatelessWidget {
 }
 
 class _PassportLoadError extends StatelessWidget {
-  const _PassportLoadError({
-    required this.message,
-    required this.onRetry,
-  });
+  const _PassportLoadError({required this.message, required this.onRetry});
 
   final String message;
   final VoidCallback onRetry;

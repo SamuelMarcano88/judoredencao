@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:missao_proxima_faixa/core/l10n/app_localizations.dart';
 import 'package:missao_proxima_faixa/features/passport/presentation/cycle_management_screen.dart';
 import 'package:missao_proxima_faixa/features/progress/presentation/attendance_management_view.dart';
+import 'package:missao_proxima_faixa/features/progress/presentation/student_dashboard_overview.dart';
 import 'package:missao_proxima_faixa/features/progress/presentation/technical_requirements_view.dart';
 import 'package:missao_proxima_faixa/features/students/domain/parent_record.dart';
 import 'package:missao_proxima_faixa/features/students/domain/student_record.dart';
@@ -99,10 +100,49 @@ class StudentListView extends ConsumerWidget {
           padding: const EdgeInsets.all(16),
           itemCount: items.length,
           separatorBuilder: (context, index) => const SizedBox(height: 8),
-          itemBuilder: (context, index) =>
-              _StudentCard(student: items[index], isParent: isParent),
+          itemBuilder: (context, index) => isParent
+              ? _ParentStudentOverviewCard(student: items[index])
+              : _StudentCard(student: items[index], isParent: false),
         );
       },
+    );
+  }
+}
+
+class _ParentStudentOverviewCard extends StatelessWidget {
+  const _ParentStudentOverviewCard({required this.student});
+
+  final StudentRecord student;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final details = <String>[
+      if (student.birthDate != null)
+        '${student.birthDate!.day.toString().padLeft(2, '0')}/'
+            '${student.birthDate!.month.toString().padLeft(2, '0')}/'
+            '${student.birthDate!.year}',
+      if (student.username != null) '${l10n.username}: ${student.username}',
+    ];
+    return Card(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          ListTile(
+            onTap: () =>
+                context.go('/responsavel/filhos/${student.id}/passaporte'),
+            leading: const CircleAvatar(child: Icon(Icons.sports_martial_arts)),
+            title: Text(student.fullName),
+            subtitle: details.isEmpty ? null : Text(details.join(' • ')),
+            trailing: const Icon(Icons.chevron_right),
+          ),
+          StudentDashboardOverview(
+            studentId: student.id,
+            dense: true,
+            wrapInCard: false,
+          ),
+        ],
+      ),
     );
   }
 }

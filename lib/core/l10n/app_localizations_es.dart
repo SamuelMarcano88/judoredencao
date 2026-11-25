@@ -303,6 +303,14 @@ class AppLocalizationsEs extends AppLocalizations {
   String get activityUpdateFailed => 'No se pudo actualizar la actividad';
 
   @override
+  String get progressOverview => 'Resumen del progreso';
+
+  @override
+  String technicalRequirementsSummary(int achieved, int total) {
+    return '$achieved de $total requisitos técnicos completados';
+  }
+
+  @override
   String get attendance => 'Asistencia';
 
   @override

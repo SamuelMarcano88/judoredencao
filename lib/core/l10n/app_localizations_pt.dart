@@ -301,6 +301,14 @@ class AppLocalizationsPt extends AppLocalizations {
   String get activityUpdateFailed => 'Não foi possível atualizar a atividade';
 
   @override
+  String get progressOverview => 'Resumo do progresso';
+
+  @override
+  String technicalRequirementsSummary(int achieved, int total) {
+    return '$achieved de $total requisitos técnicos concluídos';
+  }
+
+  @override
   String get attendance => 'Presença';
 
   @override

@@ -37,7 +37,10 @@ class DashboardShell extends ConsumerWidget {
       body: switch (role) {
         UserRole.admin => const AdminDashboardView(),
         UserRole.parent => const ParentDashboardView(),
-        UserRole.student => const StudentPassportView(allowCompletion: true),
+        UserRole.student => const StudentPassportView(
+          allowCompletion: true,
+          showProgressOverview: true,
+        ),
         UserRole.unknown => const SizedBox.shrink(),
       },
       floatingActionButton: role == UserRole.admin || role == UserRole.parent

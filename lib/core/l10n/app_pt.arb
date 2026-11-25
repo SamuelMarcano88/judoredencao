@@ -103,6 +103,18 @@
   "cycleStatusCompleted": "Concluído",
   "requiredActivity": "Atividade obrigatória",
   "activityUpdateFailed": "Não foi possível atualizar a atividade",
+  "progressOverview": "Resumo do progresso",
+  "technicalRequirementsSummary": "{achieved} de {total} requisitos técnicos concluídos",
+  "@technicalRequirementsSummary": {
+    "placeholders": {
+      "achieved": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "attendance": "Presença",
   "attendanceHistory": "Histórico de presença",
   "attendanceRate": "Frequência",

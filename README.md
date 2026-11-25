@@ -117,6 +117,13 @@ Para aplicar a migração da Etapa 4 no Supabase:
 supabase db push
 ```
 
+## Etapa 5: painéis de responsáveis e alunos
+
+O painel do responsável apresenta, para cada filho, o progresso das atividades
+obrigatórias do ciclo, a frequência e os requisitos técnicos já conquistados.
+O aluno recebe o mesmo resumo no início do próprio painel e pode continuar
+marcando as atividades do checklist. O passaporte mantém o histórico detalhado.
+
 ## Build de produção
 
 ```powershell

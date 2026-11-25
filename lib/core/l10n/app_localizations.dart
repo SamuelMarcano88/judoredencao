@@ -656,6 +656,18 @@ abstract class AppLocalizations {
   /// **'Não foi possível atualizar a atividade'**
   String get activityUpdateFailed;
 
+  /// No description provided for @progressOverview.
+  ///
+  /// In pt, this message translates to:
+  /// **'Resumo do progresso'**
+  String get progressOverview;
+
+  /// No description provided for @technicalRequirementsSummary.
+  ///
+  /// In pt, this message translates to:
+  /// **'{achieved} de {total} requisitos técnicos concluídos'**
+  String technicalRequirementsSummary(int achieved, int total);
+
   /// No description provided for @attendance.
   ///
   /// In pt, this message translates to:
